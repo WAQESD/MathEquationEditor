@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/MathEquationEditor/static/css/main.5c63cbcb.css",
+    "main.js": "/MathEquationEditor/static/js/main.60c7d6b0.js",
+    "static/js/787.c7a2c275.chunk.js": "/MathEquationEditor/static/js/787.c7a2c275.chunk.js",
+    "static/media/D2Coding.ttf": "/MathEquationEditor/static/media/D2Coding.8e1251be588cceb18bae.ttf",
+    "static/media/NanumGothicCoding.ttf": "/MathEquationEditor/static/media/NanumGothicCoding.6297642adf222a0c515e.ttf",
+    "static/media/JuliaMono-Regular.ttf": "/MathEquationEditor/static/media/JuliaMono-Regular.d40785760c13fff2648d.ttf",
+    "index.html": "/MathEquationEditor/index.html",
+    "main.5c63cbcb.css.map": "/MathEquationEditor/static/css/main.5c63cbcb.css.map",
+    "main.60c7d6b0.js.map": "/MathEquationEditor/static/js/main.60c7d6b0.js.map",
+    "787.c7a2c275.chunk.js.map": "/MathEquationEditor/static/js/787.c7a2c275.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c63cbcb.css",
+    "static/js/main.60c7d6b0.js"
+  ]
+}
