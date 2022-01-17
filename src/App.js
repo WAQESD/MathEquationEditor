@@ -5,6 +5,7 @@ import Title from "./Component/Title";
 import Latex from "./Component/Latex";
 import React, { useState } from "react";
 import Equal from "./Component/Equal";
+import ButtonContainer from "./Component/ButtonContainer";
 
 function App() {
   const [text, setText] = useState("=");
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <div className="container">
         <Title setFontSize={setFontSize} />
+        <ButtonContainer></ButtonContainer>
         <div className="editor-container">
           <Equal
             text={text}

@@ -61,13 +61,14 @@ const Base = ({ fontSize, depth, setText, setClick }) => {
     activeArr,
     baseInput,
     onMouseEnter,
+    setText: setInput,
   };
 
   return (
     <>
       {depth < 2 ? (
         <div className="base-container" onMouseLeave={() => setButtonDisplay()}>
-          <BaseInput {...inputProps} setText={setInput} />
+          <BaseInput {...inputProps} />
           <div className="button-wrapper">
             <BaseButton
               {...buttonProps}
