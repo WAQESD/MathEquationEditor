@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import BaseInput from "./BaseInput";
 import BaseButton from "./BaseButton";
+import Changable from "./Changable";
 
-const Base = ({ fontSize, depth, setText, setClick }) => {
+const Base = ({ fontSize, depth, setText, setClick, setLastFocused }) => {
   const [size, setSize] = useState(1);
   const [upSubscript, setUpSubscript] = useState("");
   const [downSubscript, setDownSubscript] = useState("");
@@ -12,6 +13,7 @@ const Base = ({ fontSize, depth, setText, setClick }) => {
     display: "",
     opacity: "0%",
   });
+  const [change, setChange] = useState("");
   const baseInput = useRef();
 
   const focusInput = () => {
@@ -49,6 +51,9 @@ const Base = ({ fontSize, depth, setText, setClick }) => {
     focusInput,
     activeArr,
     setActiveArr,
+    buttonStyle,
+    setLastFocused,
+    onMouseEnter,
   };
 
   const inputProps = {
@@ -62,32 +67,41 @@ const Base = ({ fontSize, depth, setText, setClick }) => {
     baseInput,
     onMouseEnter,
     setText: setInput,
+    setLastFocused: () => {
+      setLastFocused({ setChange });
+    },
+  };
+
+  const changableProps = {
+    change,
+    fontSize,
+    depth,
+    setText,
+    setLastFocused,
+    setClick,
   };
 
   return (
     <>
-      {depth < 2 ? (
-        <div className="base-container" onMouseLeave={() => setButtonDisplay()}>
-          <BaseInput {...inputProps} />
-          <div className="button-wrapper">
-            <BaseButton
-              {...buttonProps}
-              pos={0}
-              buttonStyle={buttonStyle}
-              setText={setUpSubscript}
-            />
-            <BaseButton
-              {...buttonProps}
-              pos={1}
-              buttonStyle={buttonStyle}
-              setText={setDownSubscript}
-            />
+      {change == "" ? (
+        depth < 2 ? (
+          <div
+            className="base-container"
+            onMouseLeave={() => setButtonDisplay()}
+          >
+            <BaseInput {...inputProps} />
+            <div className="button-wrapper">
+              <BaseButton {...buttonProps} pos={0} setText={setUpSubscript} />
+              <BaseButton {...buttonProps} pos={1} setText={setDownSubscript} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="base-container">
+            <BaseInput {...inputProps} />
+          </div>
+        )
       ) : (
-        <div className="base-container">
-          <BaseInput {...inputProps} />
-        </div>
+        <Changable {...changableProps}></Changable>
       )}
     </>
   );

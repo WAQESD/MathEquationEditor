@@ -10,6 +10,7 @@ const BaseInput = ({
   baseInput,
   onMouseEnter,
   setText,
+  setLastFocused,
 }) => {
   const checkEmpty = (arr) => {
     return arr.reduce((sum, e) => sum + e) ? false : true;
@@ -27,12 +28,12 @@ const BaseInput = ({
   return (
     <input
       className="base-input"
-      autoFocus
       style={{
         width: `${size}ch`,
         fontSize: `${fontSize}pt`,
         margin: `${fontSize / 20}px ${fontSize / 20}px`,
       }}
+      autoFocus
       onChange={(e) => {
         setSize(
           e.target && e.target.value.length >= 1 ? getSize(e.target.value) : 1
@@ -48,6 +49,7 @@ const BaseInput = ({
           setClick(false);
         }
       }}
+      onFocus={setLastFocused}
       onMouseEnter={onMouseEnter}
       placeholder={" "}
       ref={baseInput}

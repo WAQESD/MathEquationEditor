@@ -10,6 +10,8 @@ const BaseButton = ({
   focusInput,
   pos,
   buttonStyle,
+  setLastFocused,
+  onMouseEnter,
 }) => {
   const [click, setClick] = useState(false);
   const checkEmpty = (arr, pos) => {
@@ -31,6 +33,7 @@ const BaseButton = ({
       setActiveArr(tmpArr);
     }
   }, [click]);
+
   return (
     <>
       {!click ? (
@@ -45,6 +48,7 @@ const BaseButton = ({
           onClick={(e) => {
             setClick(!click);
           }}
+          onMouseEnter={onMouseEnter}
         >
           +
         </button>
@@ -54,6 +58,7 @@ const BaseButton = ({
           depth={depth + 1}
           setText={setText}
           setClick={setClick}
+          setLastFocused={setLastFocused}
         ></Base>
       )}
     </>
