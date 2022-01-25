@@ -3,6 +3,7 @@ import { MathComponent } from "mathjax-react";
 
 const Example = ({ text }) => {
   const makeComponentArray = (textarea) => {
+    textarea = textarea.replace(/\s/g, "\\,");
     return textarea
       .split("\n")
       .map((text, idx) => <MathComponent tex={text} key={idx}></MathComponent>);

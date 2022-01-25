@@ -23,7 +23,7 @@ const Equal = ({ setText, fontSize, depth, setClick, setLastFocused }) => {
   const baseProps = { fontSize, depth, setLastFocused };
 
   return (
-    <div className="equal-wrapper">
+    <div className="equal-container">
       <Base
         {...baseProps}
         setText={setLeftText}

@@ -1,5 +1,6 @@
 import React from "react";
 import Equal from "./Equal";
+import Integral from "./Integral";
 
 const Changable = ({
   change,
@@ -19,6 +20,8 @@ const Changable = ({
 
   let changable = <Equal {...equalProps}></Equal>;
   if (change == "equal") changable = <Equal {...equalProps}></Equal>;
+  if (change == "integral") changable = <Integral {...equalProps}></Integral>;
+
   return <>{changable}</>;
 };
 

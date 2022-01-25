@@ -19,7 +19,7 @@ const BaseInput = ({
   const getSize = (input) =>
     input.split("").reduce((sum, char) => {
       const korean =
-        /[a-zA-Z!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\?0-9]/g;
+        /[a-zA-Z!?@#$%^&*():;+-=~{}<>\s\_\[\]\|\\\"\'\,\.\/\`\?0-9]/g;
       const result = korean.test(char);
       if (!result) return sum + 1.666;
       else return sum + 1;

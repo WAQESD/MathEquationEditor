@@ -155,7 +155,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: 60px;
 }
 
-.equal-wrapper {
+.equal-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -191,10 +191,20 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: rgba(35, 70, 43, 0.1);
   font-size: 20pt;
   cursor: pointer;
+  margin-right: 8px;
 }
 
 .button:hover {
   background-color: rgba(35, 70, 43, 0.3);
   color: white;
   border: rgba(35, 70, 43, 0.4) 2px solid;
+}
+
+.integral-container {
+  display: flex;
+  justify-content: center;
+}
+
+.integral {
+  line-height: 1.05;
 }
